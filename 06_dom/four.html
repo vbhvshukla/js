@@ -1,0 +1,43 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121; color: white">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+  <script>
+    function addLanguage(langName) {
+      const listItem = document.createElement("li");
+      listItem.innerHTML = `${langName}`;
+      document.querySelector(".language").appendChild(listItem);
+    }
+    addLanguage("Python");
+    addLanguage("CPP");
+
+    function addLanguageOptimized(langName){
+        const listItem = document.createElement("li");
+        listItem.appendChild(document.createTextNode(langName));
+        document.querySelector(".language").appendChild(listItem);
+    }
+
+    addLanguageOptimized("GoLang");
+
+    //Editing a value
+    const secondListItem = document.querySelector("li:nth-child(2)");
+    const listItem = document.createElement("li");
+    listItem.textContent = "Java";
+    secondListItem.replaceWith(listItem);
+
+    //Another way to edit a tag
+    const firstListItem = document.querySelector("li:first-child");
+    firstListItem.outerHTML = "<li>Typescript</li>"
+
+    //Removing a tag
+    const lastLang = querySelector("li:last-child");
+    lastLang.remove();
+  </script>
+</html>

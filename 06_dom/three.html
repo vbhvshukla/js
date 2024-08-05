@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+
+</body>
+
+<script>
+    const divone = document.createElement('div');
+    divone.className = "main";
+    divone.id = Math.round(Math.random()*10 + 1);
+    console.log(divone);
+    //Adding custom attribute
+    divone.setAttribute("title",    "Generated Title");
+    //Adding text in div (innerHTML gets whats inside the div and then overrides the value )
+    // divone.innerHTML = "Hello world";
+    //Adding style
+    divone.style.backgroundColor ="white";
+    divone.style.padding ="8px"
+
+    //Prefer this instead of innterText/HTML
+    const addText = document.createTextNode("Hello world");
+    divone.appendChild(addText);
+</script>
+</html>
